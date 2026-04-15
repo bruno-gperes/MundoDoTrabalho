@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Re-Ciclo Tech | Transformando lixo em futuro</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Leaflet CSS for Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-recycle"></i> Re-Ciclo<span>Tech</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#coleta">Agende sua Coleta</a></li>
+                    <li><a href="#marketplace">Marketplace</a></li>
+                    <li><a href="#blog">Educa-Tech</a></li>
+                    <li><a href="dashboard.html" class="login-btn">Painel do Doador</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="glow-orb"></div>
+        <div class="glow-orb purple"></div>
+        
+        <div class="hero-content">
+            <h1>O seu descarte virando <span class="gradient-text-green">futuro.</span></h1>
+            <p>Doe aquele eletrônico parado, ganhe vantagens no nosso ecossistema e conecte um jovem estudante ao mundo digital.</p>
+            
+            <div class="hero-actions">
+                <a href="#coleta" class="btn btn-primary">Agendar Coleta Grátis</a>
+                <a href="dashboard.html" class="btn btn-secondary">Ver Como Funciona</a>
+            </div>
+
+            <!-- Counters -->
+            <div class="live-stats">
+                <div class="stat-box glass-panel">
+                    <h3><span class="counter-val" data-target="15340">0</span> <span>kg</span></h3>
+                    <p>Lixo Evitado</p>
+                </div>
+                <div class="stat-box glass-panel">
+                    <h3><span class="counter-val" data-target="2410">0</span> <i class="fa-solid fa-user-graduate" style="font-size: 1.2rem; color: var(--tech-purple); margin-left: 10px;"></i></h3>
+                    <p>Alunos Conectados</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="hero_concept.png" alt="Eletrônicos se transformando em energia inovadora verde">
+        </div>
+    </section>
+
+    <!-- Agende sua Coleta Section -->
+    <section id="coleta">
+        <div class="section-header">
+            <h2>Agende sua <span class="gradient-text-green">Coleta</span></h2>
+            <p>Escolha o melhor dia e nós retiramos sua doação sem nenhum custo.</p>
+        </div>
+
+        <div class="coleta-grid">
+            <div class="glass-panel coleta-form">
+                <h3 style="margin-bottom: 20px;">Detalhes da Retirada</h3>
+                <form id="collect-form">
+                    <div class="form-group">
+                        <label>O que você vai doar?</label>
+                        <input type="text" class="form-input" placeholder="Ex: Notebook Quebrado, Monitor Antigo..." required>
+                    </div>
+                    <div class="form-group" style="display: flex; gap: 15px;">
+                        <div style="flex: 1;">
+                            <label>Data</label>
+                            <input type="date" class="form-input" required>
+                        </div>
+                        <div style="flex: 1;">
+                            <label>Período</label>
+                            <select class="form-input" required>
+                                <option>Manhã (08h - 12h)</option>
+                                <option>Tarde (13h - 18h)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Endereço Completo</label>
+                        <input type="text" class="form-input" placeholder="Seu endereço para o motorista" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Confirmar Agendamento</button>
+                </form>
+            </div>
+            
+            <div class="map-container glass-panel">
+                <div id="map"></div>
+                <div style="position: absolute; bottom: 20px; left: 20px; z-index: 999;" class="glass-panel">
+                    <p style="padding: 10px; font-size: 0.9rem; margin: 0;"><i class="fa-solid fa-truck" style="color:var(--eco-green);"></i> Cobrimos toda a região metropolitana.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketplace Social Section -->
+    <section id="marketplace">
+        <div class="section-header">
+            <h2>Marketplace <span class="gradient-text-purple">Social</span></h2>
+            <p>Troque seus Eco-Pontos por educação e benefícios exclusivos.</p>
+        </div>
+
+        <div class="marketplace-grid">
+            <div class="glass-panel reward-card">
+                <div class="reward-icon"><i class="fa-solid fa-code"></i></div>
+                <h3 class="reward-title">Curso Lógica de Programação</h3>
+                <div class="reward-cost">500 Eco-Pontos</div>
+                <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 20px;">Plataforma Alura - Acesso Completo por 1 mês.</p>
+                <button class="btn btn-purple" style="width: 100%;">Resgatar</button>
+            </div>
+
+            <div class="glass-panel reward-card">
+                <div class="reward-icon"><i class="fa-solid fa-headset"></i></div>
+                <h3 class="reward-title">Cupom 20% Headsets Gamer</h3>
+                <div class="reward-cost">300 Eco-Pontos</div>
+                <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 20px;">Desconto na loja parceira Kabum.</p>
+                <button class="btn btn-purple" style="width: 100%;">Resgatar</button>
+            </div>
+
+            <div class="glass-panel reward-card">
+                <div class="reward-icon"><i class="fa-solid fa-ticket"></i></div>
+                <h3 class="reward-title">Ingresso Feira de Tecnologia</h3>
+                <div class="reward-cost">800 Eco-Pontos</div>
+                <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 20px;">Acesso ao evento Campus Party 2026.</p>
+                <button class="btn btn-purple" style="width: 100%;">Resgatar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Educa-Tech Section -->
+    <section id="blog">
+        <div class="section-header">
+            <h2>Blog <span class="gradient-text-green">Educa-Tech</span></h2>
+            <p>Dicas simples e rápidas para seus equipamentos durarem mais.</p>
+        </div>
+
+        <div class="blog-grid">
+            <div class="blog-card">
+                <img src="student_coding.png" class="blog-img" alt="Estudante programando">
+                <div class="blog-content">
+                    <span class="blog-tag">Dicas</span>
+                    <h3 class="blog-title">Como limpar seu notebook sem estragar a tela</h3>
+                    <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 15px;">Microfibra e água? Entenda o que pode ou não passar na sua tela.</p>
+                    <a href="#" style="color: var(--eco-green); font-weight: bold;">Ler Artigo &rarr;</a>
+                </div>
+            </div>
+
+            <div class="blog-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: rgba(155, 93, 229, 0.1); border-color: var(--tech-purple);">
+                <div class="blog-content">
+                    <i class="fa-solid fa-battery-three-quarters" style="font-size: 3rem; color: var(--tech-purple); margin-bottom: 15px;"></i>
+                    <h3 class="blog-title">Mitos da Bateria Viciada</h3>
+                    <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 15px;">Você precisa esperar carregar 100%? Descubra como aumentar a vida útil da bateria do celular.</p>
+                    <a href="#" style="color: var(--tech-purple-light); font-weight: bold;">Ler Artigo &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="blog-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-color: var(--eco-green);">
+                <div class="blog-content">
+                    <i class="fa-brands fa-youtube" style="font-size: 3rem; color: #ff0000; margin-bottom: 15px;"></i>
+                    <h3 class="blog-title">Video-aula: Trocando Memória RAM</h3>
+                    <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 15px;">De forma fácil e segura em casa para dar um 'boost' no PC.</p>
+                    <a href="#" style="color: var(--text-bright); font-weight: bold;">Assistir Agora &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Re-Ciclo Tech. Todos os direitos reservados. Fomentando impacto social.</p>
+    </footer>
+
+    <!-- Leaflet Map JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Doador | Re-Ciclo Tech</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-bg">
+
+    <header class="scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-recycle"></i> Re-Ciclo<span>Tech</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Sair do Painel</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="user-profile">
+                <div class="avatar">
+                    <i class="fa-solid fa-user-astronaut"></i>
+                </div>
+                <h3>Bruno Doador</h3>
+                <p style="color: var(--eco-green); font-size: 0.9rem;">Membro desde 2026</p>
+            </div>
+
+            <ul class="sidebar-nav">
+                <li><a href="#" class="active"><i class="fa-solid fa-chart-pie"></i> Visão Geral</a></li>
+                <li><a href="#"><i class="fa-solid fa-box-open"></i> Meus Aparelhos</a></li>
+                <li><a href="#"><i class="fa-solid fa-store"></i> Resgatar Prêmios</a></li>
+                <li><a href="#"><i class="fa-solid fa-gear"></i> Configurações</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Dashboard Area -->
+        <main class="dashboard-main">
+            <div class="dash-header">
+                <div>
+                    <h1 class="gradient-text-purple">Bem-vindo(a) de volta!</h1>
+                    <p>Veja seu impacto e gerencie suas recompensas.</p>
+                </div>
+                <div class="level-badge glass-panel">
+                    <i class="fa-solid fa-star"></i> Nível 4: Reciclador Pró
+                </div>
+            </div>
+
+            <div class="points-display">
+                <div class="glass-panel points-card">
+                    <h2>1.450</h2>
+                    <p>Eco-Pontos Atuais</p>
+                </div>
+                <div class="glass-panel points-card" style="flex-grow: 1; text-align: left;">
+                    <h3 style="margin-bottom: 5px;">Rumo ao Nível 5</h3>
+                    <p style="font-size: 0.9rem; color: #aaa;">Faltam apenas 50 pontos para desbloquear benefícios exclusivos.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="xp-progress" data-progress="90%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tracker-section">
+                <h2>Rastreador de Impacto <i class="fa-solid fa-satellite-dish" style="color: var(--eco-green); font-size: 1rem;"></i></h2>
+                <p style="margin-bottom: 20px; color: #aaa;">Acompanhe o destino dos equipamentos que você doou.</p>
+
+                <div class="tracker-list">
+                    <div class="glass-panel tracker-item">
+                        <div class="tracker-icon"><i class="fa-solid fa-laptop"></i></div>
+                        <div class="tracker-details">
+                            <h3>Notebook Dell Inspiron</h3>
+                            <p style="font-size:0.9rem; color:#aaa;">Entregue dia 10 de Abril</p>
+                            <p style="font-size:0.95rem; margin-top:5px;">
+                                <i class="fa-solid fa-heart" style="color:red;"></i> <strong>Status:</strong> Transformado e entregue ao aluno João (14 anos).
+                            </p>
+                        </div>
+                        <div class="tracker-status status-done">Concluído (+500 Pts)</div>
+                    </div>
+
+                    <div class="glass-panel tracker-item">
+                        <div class="tracker-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                        <div class="tracker-details">
+                            <h3>Lote de 3 Celulares Antigos</h3>
+                            <p style="font-size:0.9rem; color:#aaa;">Coletado dia 14 de Abril</p>
+                            <p style="font-size:0.95rem; margin-top:5px;">
+                                <i class="fa-solid fa-screwdriver-wrench" style="color:var(--eco-green);"></i> <strong>Status:</strong> Em triagem / manutenção na central.
+                            </p>
+                        </div>
+                        <div class="tracker-status status-progress">Em Andamento</div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
