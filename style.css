@@ -162,6 +162,7 @@ header.scrolled {
 .nav-links a {
   font-weight: 500;
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-links a::after {
@@ -620,15 +621,31 @@ footer {
   transform: translateY(-8px) rotate(-45deg);
 }
 
+@media(max-width: 1024px) {
+  /* Encolhe os links em telas intermediárias para não quebrar sem precisar do hambúrguer */
+  .nav-links {
+    gap: 15px;
+  }
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+}
+
 @media(max-width: 768px) {
-  .menu-toggle { display: flex; }
+  .menu-toggle { 
+    display: flex; 
+    order: 3; /* Força o ícone totalmente para a direita */
+  }
+  nav {
+    order: 2; /* Mantém a tag nav no meio pra não interferir no espaço */
+  }
   .nav-links {
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(11, 12, 16, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(11, 12, 16, 0.98);
+    backdrop-filter: blur(15px);
     flex-direction: column;
     padding: 20px 0;
     gap: 15px;
@@ -643,7 +660,6 @@ footer {
     opacity: 1;
     pointer-events: all;
   }
-  
   .hero-content h1 { font-size: 2.5rem; }
   .hero-actions, .live-stats { flex-direction: column; gap: 15px; }
   .coleta-grid { grid-template-columns: 1fr; }
